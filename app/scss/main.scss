@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap');
+@import "vars";
+@import "extends";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+  text-decoration: none;
+}
+
+ body {
+   font-family: 'Poppins', sans-serif;
+   color: $textColor;
+ }
+
+header {
+  @extend %container;
+  @extend %flexDisplay;
+  align-items: center;
+  padding: 40px 0;
+
+  a {color: $textColor}
+
+  .logo {
+    font-weight: 200;
+    font-size: 48px;
+    cursor: pointer;
+  }
+  .nav ul li, a {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+    color: black;
+    cursor: pointer;
+    transition: all 600ms ease;
+
+
+    &:hover {
+      color: $textColor;
+    }
+  }
+}
+
+.before-main {
+  @extend %container;
+
+  h3 {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 36px;
+    @extend %h3;
+
+    &::before {
+      top: 50px;
+      height: 3px;
+    }
+  }
+
+  p {
+    font-weight: 300;
+    margin: 20px 0;
+  }
+}
+
+main {
+  @extend %container;
+  @extend %flexDisplay;
+  .col {
+    width: 26%;
+    .block {
+      margin-bottom: 50px;
+
+      .img-holder{
+        @extend %img-holder-ext;
+        margin-bottom: 15px;
+      }
+
+      .big-size {height:510px}
+      .medium-size {height:440px}
+
+       > span {
+        color: black;
+        font-size: 12px;
+        margin: 20px 0;
+        font-weight: 700;
+      }
+
+      h3 {
+        color: black;
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      p {
+        margin: 15px 0;
+        font-size: 12px;
+      }
+
+      .bottom {
+        @extend %flexDisplay;
+        @extend %bottom;
+      }
+    }
+  }
+}
+
+.btn-block {
+  @extend %container;
+  margin: 100px auto;
+  text-align: center;
+
+  span {
+    padding: 15px 35px;
+    font-weight: 700;
+    color: black;
+    border: none;
+    background-color: #eeeeee;
+    cursor: pointer;
+    transition: all 600ms ease;
+
+    &:hover {
+      color: whitesmoke;
+      background: #787878;
+    }
+  }
+}
+
+footer {
+  @extend %container;
+  @extend %flexDisplay;
+  padding: 50px 0;
+
+  > div {
+    width: 26%;
+    h3 {
+      font-weight: 600;
+      font-size:24px;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    >.social {
+        margin-top: 20px;
+      @extend %social;
+    }
+
+    ul li, .email {
+      list-style:none;
+      margin-bottom: 7px;
+      cursor: pointer;
+      transition: all 600ms ease;
+
+      &:hover {
+        color: $mainColor;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.underfooter {
+  margin: 30px auto;
+  text-align: center;
+  font-weight: 300;
+  color: black;
+}
